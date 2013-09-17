@@ -1,0 +1,116 @@
+<div class="container-fluid">
+	<div class="row-fluid">
+		<div class="span12">
+			<div class="title-box">
+				<h1><%= @gotten['login'] %></h1>
+			</div>
+		</div>
+	</div>
+
+	<div class="row-fluid">
+		<div class="span1 offset1">
+			<div class="padding-box">
+				<h2><%= @gotten['public_repos']%></h2>
+			</div>
+		</div>
+		<div class="span10">
+			<div class="purple-box">
+				<h2>Repos</h2>
+			</div>
+		</div>
+	</div>
+	
+	<div class="row-fluid">
+		<div class="span1 offset3">
+			<div class="padding-box">
+				<h2><%= @gotten['public_gists']%></h2>
+			</div>
+		</div>
+		<div class="span8">
+			<div class="blue-box">
+				<h2>Gists</h2>
+			</div>
+		</div>
+	</div>
+	
+	<div class="row-fluid">
+		<div class="span1">
+			<div class="padding-box">
+				<h1>Repos</h1>
+			</div>
+		</div>
+		<div class="span1 offset4">
+			<div class="padding-box">
+				<h2><%= @gotten['followers']%></h2>
+			</div>
+		</div>
+		<div class="span6">
+			<div class="green-box">
+				<h2>Followers</h2>
+			</div>
+		</div>
+	</div>
+	
+	<div class="row-fluid">
+		<div class="span1">
+			<div class="padding-box">
+				<div class="arrow-down"></div>
+			</div>
+		</div>
+		<div class="span1 offset6">
+			<div class="padding-box">
+				<h2><%= @score%></h2>
+			</div>
+		</div>
+		<div class="span4">
+			<div class="yellow-box">
+				<h2>Score</h2>
+			</div>
+		</div>
+	</div>
+	
+<% @repos.each do |index| %>
+	<% unless index['description'].blank? %>
+		<div class="row-fluid">
+			<div class="span12">
+				<div class="title-box">
+					<h1><%= index['name']%></h1>
+				</div>
+			</div>
+		</div>
+		<div class="row-fluid">
+			<div class="span10 offset2">
+				<div class="purple-box">
+					<h2><%= index['description']%></h2>
+				</div>
+			</div>
+		</div>
+		<div class="row-fluid">
+			<div class="span8 offset4">
+				<div class="blue-box">
+					<h2>
+						Test Test Test
+					</h2>
+				</div>
+			</div>
+		</div>
+		<div class="row-fluid">
+			<div class="span6 offset6">
+				<div class="green-box">
+					<h2>See The Code</h2>
+				</div>
+			</div>
+		</div>
+		<div class="row-fluid">
+			<div class="span4 offset8">
+				<div class="yellow-box">
+					<h2>See The Site</h2>
+				</div>
+			</div>
+		</div>
+	<% end %>
+<% end %>
+<%= link_to root_path do %>
+<h1>back<h1>
+<% end %>
+</div>
