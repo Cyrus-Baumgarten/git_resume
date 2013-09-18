@@ -6,6 +6,7 @@ gem 'rails', '4.0.0'
 gem 'json'
 gem 'bootstrap-sass'
 # Use sqlite3 as the database for Active Record
+gem 'rails_12factor'
 gem 'pg'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
