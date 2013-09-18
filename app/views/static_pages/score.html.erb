@@ -14,7 +14,7 @@
 			</div>
 		</div>
 		<div class="span10">
-			<div class="purple-box">
+			<div class="red-box">
 				<h2>Repos</h2>
 			</div>
 		</div>
@@ -45,7 +45,7 @@
 			</div>
 		</div>
 		<div class="span6">
-			<div class="green-box">
+			<div class="purple-box">
 				<h2>Followers</h2>
 			</div>
 		</div>
@@ -63,7 +63,7 @@
 			</div>
 		</div>
 		<div class="span4">
-			<div class="yellow-box">
+			<div class="green-box">
 				<h2>Score</h2>
 			</div>
 		</div>
@@ -80,7 +80,7 @@
 		</div>
 		<div class="row-fluid">
 			<div class="span10 offset2">
-				<div class="purple-box">
+				<div class="red-box">
 					<h2><%= index['description']%></h2>
 				</div>
 			</div>
@@ -89,25 +89,33 @@
 			<div class="span8 offset4">
 				<div class="blue-box">
 					<h2>
-						Test Test Test
+						<% JSON.parse(open(index['languages_url']).read).each do |key, value| %>
+							<%= key %> 
+						<% end %>
 					</h2>
 				</div>
 			</div>
 		</div>
 		<div class="row-fluid">
 			<div class="span6 offset6">
-				<div class="green-box">
-					<h2>See The Code</h2>
-				</div>
+				<a href="<%= index['html_url']%>">
+					<div class="purple-link-box">
+						<h2>See The Code</h2>
+					</div>
+				</a>
 			</div>
 		</div>
+		<% unless index['homepage'].blank? %>
 		<div class="row-fluid">
 			<div class="span4 offset8">
-				<div class="yellow-box">
-					<h2>See The Site</h2>
-				</div>
+				<a href="<%= index['homepage']%>">
+					<div class="green-link-box">
+						<h2>See The Site</h2>
+					</div>
+				</a>
 			</div>
 		</div>
+		<% end %>
 	<% end %>
 <% end %>
 <%= link_to root_path do %>
